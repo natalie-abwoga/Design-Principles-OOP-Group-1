@@ -12,6 +12,7 @@ Emmanuel Kiprotich - 189802
 Wilson Mutua -
 
 This repository is a collection of examples demonstrating the SOLID principles in object-oriented design
+
 What are SOLID Design Principles?
 SOLID is an acronym for five design principles in object-oriented programming that help make software more understandable, flexible, and maintainable:
 
