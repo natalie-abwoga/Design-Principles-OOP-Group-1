@@ -9,7 +9,7 @@ Michael Hans Chiwo -191619
 
 Emmanuel Kiprotich - 189802
 
-Wilson Mutua -
+Mutua Wilson Mwendwa 184179
 
 This repository is a collection of examples demonstrating the SOLID principles in object-oriented design
 
