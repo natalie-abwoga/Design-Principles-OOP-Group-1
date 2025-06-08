@@ -1,4 +1,4 @@
-//Before SRP
+// Before SRP
 
 public class ReportManager {
     public void generateReport() {
@@ -19,7 +19,7 @@ public class ReportManager {
 
 
 
-//After SRP
+// After SRP
 
 // Class with a single responsibility: creating reports
 public class ReportGenerator {
