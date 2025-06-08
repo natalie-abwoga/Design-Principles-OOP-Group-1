@@ -1,0 +1,45 @@
+public class ReportManager {
+    public void generateReport() {
+        // Logic to generate a report
+        System.out.println("Report generated.");
+    }
+
+    public void saveToFile(String report) {
+        // Logic to save report to file
+        System.out.println("Report saved to file.");
+    }
+
+    public void sendEmail(String report) {
+        // Logic to send report via email
+        System.out.println("Report sent via email.");
+    }
+}
+
+
+
+
+
+// Class with a single responsibility: creating reports
+public class ReportGenerator {
+    public String generateReport() {
+        // Logic for generating report
+        return "Report content";
+    }
+}
+
+// Class with a single responsibility: saving reports to disk
+public class ReportSaver {
+    public void saveToFile(String reportContent) {
+        // Logic to save to file
+        System.out.println("Saving report to file...");
+    }
+}
+
+// Class with a single responsibility: sending reports via email
+public class ReportEmailer {
+    public void sendEmail(String reportContent) {
+        // Logic to send report via email
+        System.out.println("Sending report via email...");
+    }
+}
+
