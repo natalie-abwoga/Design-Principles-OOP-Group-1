@@ -1,3 +1,5 @@
+Before SRP
+
 public class ReportManager {
     public void generateReport() {
         // Logic to generate a report
@@ -17,7 +19,7 @@ public class ReportManager {
 
 
 
-
+After SRP
 
 // Class with a single responsibility: creating reports
 public class ReportGenerator {
