@@ -1,0 +1,72 @@
+//Violating the Open/Closed Principle 
+//In the code below the class needs modification every time a new discount type is introduced.
+
+class DiscountCalculator {
+    private String discountType;
+
+    public DiscountCalculator(String discountType) {
+        this.discountType = discountType;
+    }
+
+    public double calculateDiscount(double price) {
+        if (discountType.equals("flat")) {
+            return price - 10; // Flat discount of $10
+        } else if (discountType.equals("percentage")) {
+            return price * 0.9; // 10% discount
+        } else {
+            return price; // No discount
+        }
+    }
+}
+
+//Following the Open/Closed Principle
+//In the code below interfaces and inheritance is used to allow new discount types without modifying the existing code.
+
+// Abstract class to define discount strategy
+abstract class DiscountStrategy {
+    public abstract double applyDiscount(double price);
+}
+
+// Different discount implementations
+class FlatDiscount extends DiscountStrategy {
+    @Override
+    public double applyDiscount(double price) {
+        return price - 10; // Flat discount of $10
+    }
+}
+
+class PercentageDiscount extends DiscountStrategy {
+    @Override
+    public double applyDiscount(double price) {
+        return price * 0.9; // 10% discount
+    }
+}
+
+// New discount type (adhering to Open/Closed Principle)
+class HolidayDiscount extends DiscountStrategy {
+    @Override
+    public double applyDiscount(double price) {
+        return price * 0.85; // 15% holiday discount
+    }
+}
+
+// Using the strategy pattern
+class DiscountCalculator {
+    private DiscountStrategy strategy;
+
+    public DiscountCalculator(DiscountStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public double calculateDiscount(double price) {
+        return strategy.applyDiscount(price);
+    }
+}
+
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        DiscountCalculator calculator = new DiscountCalculator(new HolidayDiscount());
+        System.out.println(calculator.calculateDiscount(100)); // 85.0 (Holiday Discount applied)
+    }
+}
